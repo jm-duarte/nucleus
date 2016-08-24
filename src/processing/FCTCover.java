@@ -22,6 +22,14 @@ public class FCTCover extends PApplet {
 	}
 
 	public void setup() {
+		for(int a = 0; a < 20; a++){
+			drawBackground();
+			saveFrame("frame" + a + ".png");
+			System.out.println(a + " printed");
+		}
+	}
+
+	public void drawBackground() {
 		background(9, 82, 128);
 		circles = new CircleElement[NUMBER_OF_ELEMENTS];
 		for (int i = 0; i < circles.length; i++) {
@@ -29,10 +37,6 @@ public class FCTCover extends PApplet {
 					random(MINIMUM_ELEMENT_SIZE, MAXIMUM_ELEMENT_SIZE), CONNECTION_SIZE);
 		}
 		generateConnections();
-	}
-
-	public void draw() {
-
 	}
 
 	public void keyPressed() {
