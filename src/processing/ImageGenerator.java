@@ -2,7 +2,7 @@ package processing;
 
 import processing.core.PApplet;
 
-public class FCTCover extends PApplet {
+public class ImageGenerator extends PApplet {
 
 	private static final int PADDING = 20;
 	private static final int NUMBER_OF_ELEMENTS = 500;
@@ -22,11 +22,11 @@ public class FCTCover extends PApplet {
 	}
 
 	public void setup() {
-		for(int a = 0; a < 20; a++){
-			drawBackground();
-			saveFrame("frame" + a + ".png");
-			System.out.println(a + " printed");
-		}
+		drawBackground();
+		// for(int a = 0; a < 20; a++){
+		// saveFrame("frame" + a + ".png");
+		// System.out.println(a + " printed");
+		// }
 	}
 
 	public void drawBackground() {
@@ -42,13 +42,13 @@ public class FCTCover extends PApplet {
 	public void keyPressed() {
 		if (keyCode == ENTER) {
 			setup();
-		} 
-		if (keyCode == BACKSPACE){
+		}
+		if (keyCode == BACKSPACE) {
 			saveFrame("frame###.png");
 		}
 	}
 
-	private void generateConnections(){
+	private void generateConnections() {
 		for (int i = 0; i < circles.length; i++) {
 			circles[i].display();
 			for (int j = 0; j < circles.length; j++) {
@@ -60,19 +60,18 @@ public class FCTCover extends PApplet {
 			}
 		}
 	}
-	
+
 	/*
 	 * Perlin Variation To be used with: circles[i] = new CircleElement(this,
 	 * coordinateGenerator(width, 100), coordinateGenerator(height,
 	 * 100),sizeGenerator(MINIMUM_ELEMENT_SIZE, MAXIMUM_ELEMENT_SIZE,
 	 * ELEMENT_SIZE_SEED), CONNECTION_SIZE);
 	 * 
-	 *  private float coordinateGenerator(float maxValue, float randomSeed) {                   
-	 *  	return (noise(random(randomSeed))) * maxValue;                                      
-	 *  }                                                                                       
-	 *                                                                                          
-	 *  private float sizeGenerator(float minimumValue, float maximumValue, float randomSeed) { 
-	 *  	return noise(random(randomSeed)) * minimumValue + (maximumValue - minimumValue); 
-	 *  }   
-	 */                                                                                        
+	 * private float coordinateGenerator(float maxValue, float randomSeed) {
+	 * return (noise(random(randomSeed))) * maxValue; }
+	 * 
+	 * private float sizeGenerator(float minimumValue, float maximumValue, float
+	 * randomSeed) { return noise(random(randomSeed)) * minimumValue +
+	 * (maximumValue - minimumValue); }
+	 */
 }
